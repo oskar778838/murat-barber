@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@import "@fontsource/bebas-neue";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Markenfarben aus dem echten Murat-Logo (Barber-Pole: Orange-Rot + Blau auf Schwarz/Weiß) */
+:root {
+  --background: #0d0d0f;
+  --foreground: #f2f0ec;
+  --card: #19191c;
+  --card-foreground: #f2f0ec;
+  --popover: #19191c;
+  --popover-foreground: #f2f0ec;
+  --primary: #e0623c;
+  --primary-foreground: #0d0d0f;
+  --secondary: #2e6ca4;
+  --secondary-foreground: #f2f0ec;
+  --muted: #232327;
+  --muted-foreground: #a8a29e;
+  --accent: #232327;
+  --accent-foreground: #f2f0ec;
+  --destructive: #ef4444;
+  --destructive-foreground: #f2f0ec;
+  --border: #2a2a2f;
+  --input: #2a2a2f;
+  --ring: #e0623c;
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
+  --animate-grid: grid 20s linear infinite;
+
+  @keyframes grid {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
